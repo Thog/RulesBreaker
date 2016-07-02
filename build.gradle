@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = appVersion
+group= "eu.thog"
+archivesBaseName = "RulesBreaker"
+
+def forgeVersion = "1.9.4-12.17.0.1976";
+def mappingsVersion = "snapshot_20160518"
+if (System.env.BUILD_NUMBER != null) version = "$version.$System.env.BUILD_NUMBER"
+if (System.env.FORGE_VERSION != null) forgeVersion = "$System.env.FORGE_VERSION"
+if (System.env.MAPPINGS_VERSION != null) mappingsVersion = "$System.env.MAPPINGS_VERSION"
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+
+minecraft {
+    version = forgeVersion
+    runDir = "run"
+    mappings = mappingsVersion
+    replace 'DEV_BUILD', project.version
+    replaceIn 'RulesBreaker.java'
+}
+
+
+processResources
+{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

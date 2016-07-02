@@ -1,0 +1,19 @@
+[
+    {
+        "authors": ["Thog"],
+        "credits": "",
+        "dependants": [],
+        "dependencies": [],
+        "description": "Break game rules and extends vanilla commands!",
+        "logoFile": "",
+        "modid": "rulesbreaker",
+        "name": "Rules Breaker",
+        "parent": "",
+        "requiredMods": [],
+        "screenshots": [],
+        "updateUrl": "",
+        "url": "https://mods.thog.eu/rulesbreaker",
+        "version": "${version}",
+        "mcversion": "${mcversion}"
+    }
+]

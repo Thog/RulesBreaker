@@ -1,0 +1,15 @@
+commands.gamerule.usagecustom=/gamerule <rule name> [value] [world]
+commands.gamerule.success.allworld=Game rule %s has been updated to %s in all worlds
+commands.gamerule.success.custom=Game rule %s has been updated to %s in world "%s"
+
+commands.weather.usage.custom=/weather <clear|rain|thunder> [duration in seconds|world] [world]
+commands.weather.clear.custom=Changing to clear weather in world "%s"
+commands.weather.rain.custom=Changing to rainy weather in world "%s"
+commands.weather.thunder.custom=Changing to rain and thunder in world "%s"
+commands.weather.thunder.custom.allworld=Changing to rain and thunder in all worlds
+commands.weather.clear.custom.allworld=Changing to clear weather in all worlds
+commands.weather.rain.custom.allworld=Changing to rainy weather in all worlds
+
+commands.downfall.usage.custom=/toggledownfall [world]
+commands.downfall.success.custom=Toggled downfall in world "%s"
+commands.downfall.success.custom.allworld=Toggled downfall in all worlds
